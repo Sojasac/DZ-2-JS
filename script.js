@@ -28,22 +28,26 @@ function loadTodo(){
 
 
 
+
 //addEventListener - обработчик события
 
 inputData.addEventListener('keypress', function(keyPressed){
     if(keyPressed.which === 13 & this.value != ""){
         var newLi = document.createElement("li");
         var newSpan = document.createElement("span");
+        let newPar = document.createElement("p")
         newSpan.innerHTML = 'Удалить ';
         let date = new Date();
         var newTodo = this.value;
-        ulSpisok.appendChild(newLi).append(newSpan, newTodo, date);
+        newPar.innerHTML = newTodo + date;
+        ulSpisok.appendChild(newLi).append(newSpan, newPar);
         newLi.style.textDecoration='none'
 
         newLi.onclick = function lineThrough(){
-                newLi.style.textDecoration='line-through'
+                newPar.style.textDecoration='line-through'
             
         };
+        
         
         }
 

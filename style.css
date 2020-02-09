@@ -30,3 +30,6 @@ span{
 #infoB {
     margin-top: 10px;
 }
+p {
+    text-decoration: none;
+}
